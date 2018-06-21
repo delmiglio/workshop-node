@@ -10,4 +10,4 @@ function connectionFactory() {
     return connection;
 }
 
-module.exports = connectionFactory;
+module.exports = () => connectionFactory;
