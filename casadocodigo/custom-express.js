@@ -5,6 +5,7 @@ module.exports = function () {
 
     // Set Viewengine
     app.set('view engine', 'ejs'); 
+    app.use(express.static('./public'));
 
     // Map a GET REQUEST
     require('./routes/produtos')(app);
