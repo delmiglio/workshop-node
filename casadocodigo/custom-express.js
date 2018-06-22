@@ -1,5 +1,6 @@
 const consign = require('consign');
 const express = require('express');
+const bodyparser = require('body-parser');
 
 module.exports = function () {
     var app = express();
@@ -7,6 +8,7 @@ module.exports = function () {
     // Set Viewengine
     app.set('view engine', 'ejs');
     app.use(express.static('./public'));
+    app.use(bodyparser.urlencoded({extended:true}));
 
     consign()
         .include('./routes')

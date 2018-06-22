@@ -17,5 +17,9 @@ ProdutoDao.prototype.getAllLivros = function(callback){
     this._connection.query('Select * from livros',callback);
 }
 
+ProdutoDao.prototype.save = function(livro, callback){
+    console.log(livro);
+    this._connection.query('INSERT INTO livros SET ?', livro , callback);
+}
 
 module.exports = ProdutoDao;
