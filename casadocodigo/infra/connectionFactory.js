@@ -1,6 +1,4 @@
 var mysql = require('mysql');
-
-
 function connectionFactory() {
     console.log(process.env.DB_USER);
     const connection = mysql.createConnection({
@@ -11,5 +9,4 @@ function connectionFactory() {
     });
     return connection;
 }
-
 module.exports = () => connectionFactory;
